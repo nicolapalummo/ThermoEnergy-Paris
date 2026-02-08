@@ -1,0 +1,1851 @@
+:root {
+  --color-bg: #0A1125;
+  --color-primary: #002593;
+  --color-action: #f8c61e;
+  /* Updated Yellow */
+  --color-text: #F7FAFD;
+  --color-tech: #BDBDBD;
+
+  /* Global Font changed to Gill Sans as requested */
+  --font-main: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --font-subtitle: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utilities */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-accent {
+  color: var(--color-action);
+}
+
+.btn-primary {
+  background-color: var(--color-action);
+  color: var(--color-bg);
+  padding: 12px 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.btn-secondary {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text);
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 48px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Header & Nav - PIPE DESIGN */
+/* Header & Nav - Minimalist Blur Design */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(10, 17, 37, 0.3);
+  /* Slight tint */
+  backdrop-filter: blur(12px);
+  /* Blur effect */
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: auto;
+  /* Re-enable clicks */
+  transition: all 0.3s ease;
+}
+
+/* The Pipe Body -> Now Center-Aligned Navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.nav-logo,
+.nav-cta-wrapper {
+  flex: 0 0 auto;
+  min-width: 120px;
+  /* Balance both sides to help center the middle */
+}
+
+.nav-cta-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+
+.nav-pipe {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+
+  .nav-pipe {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    /* No background */
+    padding: 0;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Pipe Flanges Removed */
+  .nav-pipe::before,
+  .nav-pipe::after {
+    content: none;
+  }
+
+  /* Dividers visually splitting the pipe into 3 rects */
+  /* REMOVED blue bars as requested */
+}
+
+/* Pipe Flanges (The "Shoulders" at ends) */
+.nav-pipe::before,
+.nav-pipe::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  /* Protruding height */
+  bottom: -4px;
+  width: 12px;
+  /* Flange width */
+  background-color: #E5C100;
+  /* Slightly darker yellow/metallic for 3D effect */
+  border: 2px solid #0A1125;
+  /* Outline to show "part" */
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-pipe::before {
+  left: -12px;
+  /* Stick out left */
+  border-right: none;
+}
+
+.nav-pipe::after {
+  right: -12px;
+  /* Stick out right */
+  border-left: none;
+}
+
+/* Dividers visually splitting the pipe into 3 rects */
+/* REMOVED blue bars as requested */
+
+
+.logo {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #fff;
+  /* White logo */
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-subtitle {
+  font-family: var(--font-subtitle);
+  font-size: 1.2rem;
+  color: var(--color-action);
+  margin-bottom: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Mascots - Refinement */
+.hero-mascot {
+  position: absolute;
+  height: 450px;
+  /* Much larger as requested */
+  width: auto;
+  z-index: 0;
+  /* Changed from -1 to ensure visibility but still below text if text has higher z-index */
+  bottom: 0px;
+  /* Aligned to bottom */
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mario-hero {
+  left: 5%;
+  /* Relative to screen rather than title for bottom alignment */
+  transform: rotate(0deg);
+  /* Vertical as requested */
+}
+
+.luigi-hero {
+  right: 5%;
+  transform: rotate(0deg);
+  /* Original orientation */
+}
+
+/* Hover effects removed as requested */
+
+
+.text-white {
+  color: #fff;
+  /* White accent on yellow looks okay, or dark blue? */
+  color: var(--color-bg);
+  /* Let's keep it dark for now as per contrast */
+  opacity: 0.8;
+}
+
+
+
+/* Urgent CTA in third section */
+.nav-cta {
+  z-index: 1;
+}
+
+.btn-urgent {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid var(--color-action);
+  padding: 10px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.btn-urgent:hover {
+  background-color: var(--color-action);
+  color: var(--color-bg);
+  box-shadow: 0 0 15px rgba(248, 198, 30, 0.4);
+}
+
+
+/* Pourquoi Nous Section */
+.about-us {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 37, 147, 0.05) 0%, transparent 50%);
+}
+
+/* Warum Uns - Refined Layout */
+.about-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+  position: relative;
+}
+
+.about-text-column {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+}
+
+/* Reset parent container alignment for this layout */
+.about-container {
+  align-items: flex-start;
+}
+
+.about-header {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  /* Increased size */
+  line-height: 1.8;
+  color: var(--color-tech);
+  text-align: justify;
+}
+
+/* Visual Column with Image */
+.about-visual-column {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  /* Increased size */
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+}
+
+/* DECORATIVE PIPES REMOVED as requested */
+/* Clean slate */
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .about-content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-text-column {
+    order: -1;
+    max-width: 100%;
+
+  }
+
+  .about-visual-column {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    align-items: center;
+  }
+
+  .about-header,
+  .about-card {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  padding-top: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/hero-bg.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  /* Full bleed image establishes the tone */
+  z-index: 0;
+}
+
+/* Gradient overlay for text readability if needed, keeping it subtle */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(10, 17, 37, 0.8), transparent);
+  z-index: 1;
+}
+
+
+.hero-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 120px 0 0 0;
+  position: relative;
+  z-index: 10;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Adjusted for full visibility on desktop and wrap on mobile */
+.hero-title-brand {
+  /* Explicitly keeping Montserrat for the Hero Brand as requested */
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  /* Push to bottom */
+  padding-bottom: 20px;
+  /* Slight buffer from edge */
+  pointer-events: none;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  overflow: hidden;
+  /* Prevent horizontal scrollbars if font slightly overshoots */
+}
+
+.brand-line-1 {
+  /* THERMOENERGY = 12 chars. 100vw / 12 = ~8.3vw.
+     Let's use slightly less to account for letter-spacing and padding.
+  */
+  font-size: 13vw;
+  /* Tweaked via trial for boldness. */
+  font-size: clamp(3rem, 13vw, 15rem);
+  /* But clamp limits max on huge screens? No, user wants FULL WIDTH. */
+  font-size: 11vw;
+  /* Safe bet for 12 chars bold */
+  line-height: 0.8;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: -0.05em;
+  display: block;
+}
+
+.brand-line-2 {
+  /* PARIS = 5 chars. Can be HUGE if full width, or same size. 
+     Usually huge looks cool. */
+  font-size: 11vw;
+  /* Match first line for consistency or go bigger? Let's match. */
+  line-height: 0.8;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  display: block;
+  margin-top: -1vw;
+  /* Tighten gap */
+}
+
+/* Ensure PARIS takes full width if desired, or just centered block */
+/* If user wants PARIS on new line, block display handles that. */
+
+/* Restoring the outlined font style for PARIS */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* Specific Mobile Tweaks */
+@media (max-width: 768px) {
+  .hero-title-brand {
+    padding-bottom: 80px;
+    /* More space on mobile bottom */
+  }
+
+  .brand-line-1 {
+    font-size: 11vw;
+    /* Adjusted to fit 12 characters within viewport width */
+  }
+
+  .brand-line-2 {
+    font-size: 14vw;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  color: var(--color-action);
+  margin-bottom: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Cleanup Mascot Styles */
+.hero-mascot,
+.mario-hero,
+.luigi-hero {
+  display: none;
+}
+
+/* Pillars Section */
+.pillars-section {
+  position: relative;
+  padding: 100px 0;
+  margin-top: -60px;
+  /* Slight overlap with about section */
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.pillar-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 48px 32px;
+  background: rgba(13, 22, 47, 0.4);
+  /* Darker base */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: visible;
+  /* Allow pipe joints to overflow */
+}
+
+.card-glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--color-action);
+  box-shadow: 0 30px 60px rgba(255, 215, 0, 0.15);
+}
+
+.pillar-card.highlight {
+  border: 1px solid rgba(0, 37, 147, 0.5);
+}
+
+.pillar-card.highlight:hover {
+  border-color: var(--color-action);
+}
+
+.pillar-card .icon-box {
+  margin-bottom: 24px;
+  position: relative;
+  color: var(--color-action);
+}
+
+/* Complex SVG Animations */
+.icon-wrench-complex .wrench-handle {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: 12px 12px;
+}
+
+.pillar-card:hover .icon-wrench-complex .wrench-handle {
+  animation: tightenNut 2.5s infinite ease-in-out;
+}
+
+.pillar-card:hover .icon-wrench-complex .droplet {
+  animation: dropWater 2.5s infinite linear;
+}
+
+@keyframes tightenNut {
+
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes dropWater {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+.icon-emergency-complex .clock-hand {
+  transform-origin: 12px 12px;
+  animation: slowClock 10s infinite linear;
+}
+
+.icon-emergency-complex .clock-hand-fast {
+  transform-origin: 12px 12px;
+  animation: fastClock 2s infinite linear;
+}
+
+.pillar-card:hover .icon-emergency-complex .alert-triangle {
+  opacity: 1;
+  animation: blinkAlert 0.5s infinite alternate;
+}
+
+.pillar-card:hover .icon-emergency-complex .radar-ping {
+  animation: radarEcho 2s infinite;
+}
+
+@keyframes slowClock {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fastClock {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blinkAlert {
+  from {
+    color: var(--color-action);
+    opacity: 1;
+  }
+
+  to {
+    color: #FF4500;
+    opacity: 0.5;
+  }
+}
+
+@keyframes radarEcho {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    stroke-width: 1.2;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(4);
+    stroke-width: 0.1;
+  }
+}
+
+.icon-heat-complex .heat-wave {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+}
+
+.pillar-card:hover .icon-heat-complex .heat-wave {
+  animation: waveFlow 2s infinite linear;
+}
+
+.pillar-card:hover .icon-heat-complex .heat-active {
+  opacity: 1;
+  animation: glowCore 1s infinite alternate;
+}
+
+@keyframes waveFlow {
+  0% {
+    stroke-dashoffset: 40;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes glowCore {
+  from {
+    filter: blur(0);
+  }
+
+  to {
+    filter: blur(3px);
+    color: #FFA500;
+  }
+}
+
+
+.pillar-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.pillar-card p {
+  color: #BDBDBD;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Pipe Joints on Cards */
+.pipe-joint {
+  position: absolute;
+  width: 16px;
+  height: 32px;
+  background: #E5C100;
+  border: 2px solid #0A1125;
+  border-radius: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  opacity: 0;
+  /* Hidden by default, main.js will manage? Actually let's just make them look cool */
+  transition: opacity 0.3s;
+}
+
+.pillar-card:hover .pipe-joint {
+  opacity: 1;
+}
+
+.joint-in {
+  left: -8px;
+}
+
+.joint-out {
+  right: -8px;
+}
+
+
+/* Process Section New Layout */
+.process-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  /* Space between columns */
+  margin-top: 20px;
+  /* Reduced from 60px to bring closer */
+  position: relative;
+}
+
+/* Left Column: Stacked Steps */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+/* Step Staggering (Staircase Effect to the Right) */
+@media (min-width: 1024px) {
+  .step:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .step:nth-child(2) {
+    margin-left: 40px;
+  }
+
+  .step:nth-child(3) {
+    margin-left: 80px;
+  }
+
+  .step:nth-child(4) {
+    margin-left: 120px;
+  }
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Align contents left */
+  width: fit-content;
+  /* Allow staggering to be visible */
+  transition: all 0.3s ease;
+}
+
+.card-body {
+  background: rgba(13, 22, 47, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 320px;
+  /* Fixed width for consistency */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.step:hover .card-body {
+  border-color: var(--color-action);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: translateX(10px);
+  /* Subtle shift on hover */
+}
+
+/* Right Column: Visual with Image */
+.process-visual-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.process-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  /* Match Why Us image size */
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: rotate(3deg);
+  /* Rotated RIGHT as requested */
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.process-image:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .process-content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .process-image {
+    max-height: 300px;
+    transform: rotate(0deg);
+    /* No rotation on mobile to save space */
+  }
+
+  .step {
+    width: 100%;
+    /* Full width cards on mobile */
+    align-items: center;
+  }
+
+  .card-body {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.step:hover {
+  /* Removed translateY movement as requested */
+  transform: scale(1.02) !important;
+  /* Retaining simple scale if staircase exists, need to handle transform overwrite */
+}
+
+/* Specific handling for hover to maintain staircase offset but add scale */
+@media (min-width: 1024px) {
+  .step:nth-child(1):hover {
+    transform: translateY(0) scale(1.02);
+  }
+
+  .step:nth-child(2):hover {
+    transform: translateY(60px) scale(1.02);
+  }
+
+  .step:nth-child(3):hover {
+    transform: translateY(120px) scale(1.02);
+  }
+
+  .step:nth-child(4):hover {
+    transform: translateY(180px) scale(1.02);
+  }
+}
+
+
+.step-number {
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  /* subtle watermark style */
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  margin: 0;
+  line-height: 1;
+  font-family: var(--font-main);
+  z-index: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.step:hover .step-number {
+  opacity: 1;
+  color: var(--color-action);
+  /* Highlight Number */
+  transform: translateY(-5px);
+}
+
+.step:hover .card-body {
+  /* Removed border color change as requested */
+  /* border-color: var(--color-action); */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  /* Darker shadow for depth */
+  transform: translateX(10px);
+}
+
+.card-body h3 {
+  color: var(--color-action);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-body p {
+  color: #BDBDBD;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Testimonials Redesign */
+.testimonials-wrapper {
+  display: flex;
+  justify-content: center;
+  /* Centered as requested */
+  align-items: flex-start;
+  gap: 120px;
+  /* Grouped but with breathing room */
+}
+
+.testimonials-left {
+  flex: 0 0 auto;
+  /* Allow sizing based on content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.social-proof-content {
+  margin-top: 12px;
+  /* Reduced from 32px */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Reduced from 32px */
+}
+
+/* Google Badge Row */
+.google-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 12px;
+  /* Reduced from 24px */
+}
+
+.google-logo {
+  height: 90px;
+  /* Doubled from ~45/48 */
+  width: auto;
+  object-fit: contain;
+}
+
+.google-rating {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.google-rating .score {
+  font-size: 5rem;
+  /* Doubled from 2.5rem */
+  font-weight: 800;
+  color: #fff;
+}
+
+.google-rating .stars {
+  color: #F8C100;
+  font-size: 2.5rem;
+  /* Doubled from 1.2/1.5rem */
+  letter-spacing: 4px;
+  margin-top: 8px;
+}
+
+/* Review Button: Coherent styles */
+.btn-review-google {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #fff;
+  padding: 12px 0;
+  /* Text-like padding, minimal */
+  border-bottom: 2px solid #0F9D58;
+  /* Underline style for elegance */
+  border-radius: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  width: fit-content;
+  box-shadow: none;
+}
+
+.btn-review-google:hover {
+  background-color: transparent;
+  color: #0F9D58;
+  padding-left: 10px;
+  /* Slide effect */
+  transform: translateX(5px);
+  box-shadow: none;
+}
+
+/* Right Column: Slider Card */
+/* Right Column: Slider Card */
+.testimonials-right {
+  flex: 1;
+  position: relative;
+  /* Square Card Logic */
+  width: 100%;
+  max-width: 400px;
+  /* Reduced from 500px */
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+
+  /* Glassmorphism / Blur Effect */
+  background: rgba(13, 22, 47, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: visible;
+  /* Allow quote to bleed out, BUT we need to contain text? No, overflow:hidden cuts the quote. visible allows quote out. */
+}
+
+/* We need text to be clipped if it overflows, but quote to be outside. 
+   Actually, standard way is to put quote inside and absolute it. 
+   If overflow is visible, text might spill? Text is short. 
+   Let's try overflow: visible for the quote mark effect. */
+
+.quote-mark-large {
+  position: absolute;
+  top: -80px;
+  left: -50px;
+  font-size: 20rem;
+  /* HUGE */
+  line-height: 1;
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.review-slider-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  /* inner content clipped */
+}
+
+.review-author {
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: inline-block;
+  border-bottom: 2px solid var(--color-action);
+  padding-bottom: 4px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.review-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #E2E8F0;
+  font-style: italic;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Controls */
+.slider-controls {
+  position: absolute;
+  bottom: -25px;
+  /* Move OUTSIDE the card at bottom right as per modern style? Or inside? User said "preccia unica". Let's put it inside bottom right. */
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  gap: 0;
+  z-index: 2;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+/* Hide Prev Arrow */
+.prev-review {
+  display: none;
+}
+
+.slider-arrow {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.5rem;
+}
+
+.slider-arrow:hover {
+  background: var(--color-action);
+  border-color: var(--color-action);
+  color: var(--color-bg);
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .testimonials-wrapper {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .testimonials-left {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-proof-content {
+    align-items: center;
+  }
+
+  .quote-mark-large {
+    font-size: 8rem;
+    top: -40px;
+    left: -20px;
+  }
+}
+
+/* Contact Section */
+/* Contact Section Redesign */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  /* Removed container styles to make separate blocks */
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Interactive divider or spacing if needed */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-tech);
+  line-height: 1.6;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-action);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-details li:hover .icon-box {
+  background: var(--color-action);
+  color: var(--color-bg);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(248, 198, 30, 0.2);
+}
+
+/* Modern Glass Form */
+.contact-form {
+  background: rgba(13, 22, 47, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.input-modern {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  color: #fff;
+  font-family: var(--font-main);
+  transition: all 0.3s ease;
+}
+
+.input-modern:focus {
+  outline: none;
+  border-color: var(--color-action);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(248, 198, 30, 0.1);
+}
+
+.input-modern::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+select.input-modern {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f8c61e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 16px;
+  color: #fff;
+  /* Ensure text is white */
+}
+
+/* Fix option color in standard selects */
+select.input-modern option {
+  background-color: var(--color-bg);
+  color: #fff;
+}
+
+textarea.input-modern {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  /* Ensure it inherits primary btn styles but adds size */
+}
+
+
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px;
+  background: rgba(10, 17, 37, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: white;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-action);
+}
+
+/* Footer */
+footer {
+  background: #050914;
+  /* Darker than BG */
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Main Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-main);
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover {
+  color: var(--color-action);
+  transform: translateY(-2px);
+}
+
+/* Global Smooth Transitions */
+a,
+button,
+.btn,
+.pillar-card,
+.service-card,
+input,
+select,
+textarea,
+.icon-box,
+.nav-links a,
+.nav-cta a {
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0s;
+}
+
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  color: var(--color-tech);
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: var(--color-action);
+}
+
+@media (max-width: 900px) {
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bento-item {
+    min-height: 200px;
+  }
+
+  .item-plumbing,
+  .item-heating,
+  .item-renovation,
+  .item-maintenance {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    display: none;
+    /* Mobile menu to be implemented if needed, currently hiding for simplicity or can stack */
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 32px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .process-steps {
+    flex-direction: column;
+  }
+
+  .pillars {
+    margin-top: 0;
+  }
+}
+
+/* Custom Cursor Effect */
+html,
+body {
+  cursor: none;
+}
+
+a,
+button,
+[role="button"],
+.hover-trigger {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10001;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+.cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgba(248, 198, 30, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+  z-index: 10000;
+}
+
+.cursor.hovered {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(248, 198, 30, 0.1);
+  border-color: rgba(248, 198, 30, 0.5);
+}
+
+@media (max-width: 1024px) {
+
+  .cursor,
+  .cursor-dot {
+    display: none;
+  }
+
+  html,
+  body {
+    cursor: auto;
+  }
+
+  a,
+  button {
+    cursor: pointer !important;
+  }
+}
+
+/* Hide default cursor globally */
+html,
+body,
+a,
+button,
+[role="button"],
+.pillar-card,
+.btn-primary,
+.btn-secondary,
+.btn-urgent,
+.step {
+  cursor: none !important;
+}
+
+/* White Dot Cursor (Precise Pointer) */
+.cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+  /* Above the liquid ring */
+  transition: transform 0.1s ease-out;
+}
+
+/* Update Liquid Cursor (Ring only) */
+.cursor::after {
+  content: none !important;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE FIXES
+   ============================================ */
+
+/* 1. Hide second yellow pipe segment AND its flanges on mobile */
+@media (max-width: 768px) {
+
+  .pipe-segment-2,
+  .pipe-second-segment {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* 2. Increase methodology image size and add slight rotation on mobile (like pourquoi_nous) */
+@media (max-width: 1024px) {
+  .process-image {
+    max-height: 450px;
+    max-width: 90%;
+    transform: rotate(2deg);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-image {
+    max-height: 400px;
+    max-width: 100%;
+    transform: rotate(2deg);
+  }
+
+  /* Center "Comment nous travaillons" title on mobile */
+  .process .section-title,
+  #process .section-title {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+}
+
+/* 3. Reduce line-height of titles on mobile - UNIFORM SIZE */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    text-align: center;
+    width: 100%;
+  }
+
+  h2.section-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  /* Process steps container - allow staggering */
+  .process-steps {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  /* Staggered step cards on mobile (left-right-left-right) */
+  .process-steps .step {
+    width: 100%;
+    display: flex;
+  }
+
+  .process-steps .step:nth-child(odd) {
+    justify-content: flex-start;
+  }
+
+  .process-steps .step:nth-child(even) {
+    justify-content: flex-end;
+  }
+
+  .process-steps .step .card-body {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .process-steps .step:nth-child(odd) .card-body {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .process-steps .step:nth-child(even) .card-body {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+/* 4. Fix "Nos clients ont dit" section on mobile */
+@media (max-width: 900px) {
+
+  /* Google badge row - HORIZONTAL on mobile (side by side) */
+  .google-badge-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: left;
+  }
+
+  /* Reduce Google logo size on mobile */
+  .google-logo {
+    height: 50px;
+  }
+
+  /* Align 5.0 score to left when side by side */
+  .google-rating {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .google-rating .score {
+    font-size: 2.5rem;
+  }
+
+  .google-rating .stars {
+    font-size: 1.2rem;
+  }
+
+  /* Center the CTA button */
+  .btn-review-google {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 24px;
+    border: 2px solid #0F9D58;
+    border-radius: 8px;
+  }
+
+  /* Adjust right column (review slider) */
+  .testimonials-right {
+    max-width: 100%;
+    aspect-ratio: auto;
+    padding: 32px 24px;
+    min-height: 300px;
+  }
+
+  .quote-mark-large {
+    font-size: 6rem;
+    top: -30px;
+    left: -10px;
+  }
+
+  .review-author {
+    font-size: 1.2rem;
+  }
+
+  .review-text {
+    font-size: 1rem;
+  }
+
+  /* Slider controls on mobile */
+  .slider-controls {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .slider-arrow {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .testimonials-left .section-title {
+    font-size: 2.2rem;
+  }
+
+  .google-logo {
+    height: 60px;
+  }
+
+  .google-rating .score {
+    font-size: 2.5rem;
+  }
+
+  .google-rating .stars {
+    font-size: 1.2rem;
+  }
+
+  .testimonials-right {
+    padding: 24px 20px;
+    min-height: 280px;
+  }
+
+  .process-image {
+    max-height: 350px;
+  }
+}

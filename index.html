@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermo Energy Paris - Plomberie & Chauffage</title>
+  <meta name="description"
+    content="Thermo Energy Paris : Votre confort, notre priorité. Plomberie, Chauffage, Urgence à Paris.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;500;700&display=swap"
+    rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"></script>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor"></div>
+  <!-- Navigation -->
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <!-- Logo Block -->
+      <div class="nav-logo">
+        <a href="#" class="logo">75</a>
+      </div>
+
+      <!-- Links Block -->
+      <nav class="nav-links-wrapper">
+        <ul class="nav-links">
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#process">NOTRE PROCESS</a></li>
+          <li><a href="#testimonials">AVIS</a></li>
+          <li><a href="#contact">CONTACTS</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Block -->
+      <div class="nav-cta-wrapper">
+        <a href="tel:0783164605" class="btn-urgent">07 83 16 46 05</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Authority Hero Entrance -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <p class="hero-subtitle">Votre confort. Notre priorité.</p>
+      </div>
+      <h1 class="hero-title-brand">
+        <span class="brand-line-1">THERMOENERGY</span>
+        <span class="brand-line-2 text-outline">PARIS</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Pourquoi Nous Section -->
+  <!-- Pourquoi Nous Section -->
+  <section class="about-us section-padding" id="why-us">
+    <div class="container about-container">
+      <div class="about-content-wrapper">
+        <!-- Image Column (Left) -->
+        <div class="about-visual-column">
+          <img src="/pourquoi_nous.webp" alt="Pourquoi nous choisir" class="about-image">
+        </div>
+        <!-- Text Column (Right) -->
+        <div class="about-text-column">
+          <div class="about-header">
+            <h2 class="section-title">Pourquoi nous <span class="text-accent">choisir ?</span></h2>
+          </div>
+          <p class="about-description">
+            Basés au cœur de Paris 11e, nous intervenons en urgence 24h/24 avec une réactivité record pour sécuriser
+            votre foyer. Nos experts certifiés allient savoir-faire artisanal et équipements de pointe pour garantir la
+            fiabilité totale de vos installations de plomberie et chauffage. <br><br>
+            Vous bénéficiez de conseils personnalisés et d'un devis transparent, sans surprise, pour une performance
+            énergétique optimale de votre logement. Choisir ThermoEnergy, c’est exiger une expérience premium où chaque
+            détail est maîtrisé pour votre confort et votre sérénité absolue.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Pillars (Cards) -->
+  <section class="pillars-section" id="services">
+    <div class="container pillars">
+      <div class="pillar-card" data-tilt>
+        <div class="card-glass"></div>
+        <div class="icon-box svg-animated">
+          <!-- Complex Wrench & Nut SVG -->
+          <svg viewBox="0 0 24 24" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.2"
+            stroke-linecap="round" stroke-linejoin="round" class="icon-wrench-complex">
+            <path class="nut" d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <path class="wrench-handle"
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            <path class="droplet" d="M12 22s5-3.5 5-7a5 5 0 0 0-10 0c0 3.5 5 7 5 7z" opacity="0" />
+          </svg>
+        </div>
+        <h3>Plomberie Générale</h3>
+        <p>Installation, réparation et entretien de vos réseaux d'eau. Savoir-faire artisanal garanti.</p>
+        <div class="pipe-joint joint-in"></div>
+        <div class="pipe-joint joint-out"></div>
+      </div>
+
+      <div class="pillar-card highlight" data-tilt>
+        <div class="card-glass"></div>
+        <div class="icon-box svg-animated">
+          <!-- Complex Emergency Clock & Alert SVG -->
+          <svg viewBox="0 0 24 24" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.2"
+            stroke-linecap="round" stroke-linejoin="round" class="icon-emergency-complex">
+            <circle cx="12" cy="12" r="10" />
+            <path class="clock-hand" d="M12 12l0 -6" />
+            <path class="clock-hand-fast" d="M12 12l4 4" />
+            <path class="alert-triangle" d="M12 9v4m0 4h.01" opacity="0" />
+            <circle class="radar-ping" cx="12" cy="12" r="2" opacity="0" />
+          </svg>
+        </div>
+        <h3>Urgence 24/7</h3>
+        <p>Intervention express en moins de 30 minutes. Fuites, dégâts des eaux, débouchage.</p>
+        <div class="pipe-joint joint-in"></div>
+        <div class="pipe-joint joint-out"></div>
+      </div>
+
+      <div class="pillar-card" data-tilt>
+        <div class="card-glass"></div>
+        <div class="icon-box svg-animated">
+          <!-- Complex Boiler & Heat SVG -->
+          <svg viewBox="0 0 24 24" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.2"
+            stroke-linecap="round" stroke-linejoin="round" class="icon-heat-complex">
+            <path class="boiler-body" d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+            <path class="gauge" d="M12 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path class="heat-wave wave-1" d="M9 7c0 0 1-1 3-1s3 1 3 1" />
+            <path class="heat-wave wave-2" d="M9 10c0 0 1-1 3-1s3 1 3 1" />
+            <circle class="heat-active" cx="12" cy="15" r="1" fill="currentColor" opacity="0" />
+          </svg>
+        </div>
+        <h3>Chauffage & Eau Chaude</h3>
+        <p>Dépannage chaudière, installation de radiateurs et optimisation énergétique.</p>
+        <div class="pipe-joint joint-in"></div>
+        <div class="pipe-joint joint-out"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Methodology & Process Storytelling -->
+  <section id="process" class="process section-padding">
+    <div class="container">
+      <h2 class="section-title">Comment nous <span class="text-accent">travaillons</span></h2>
+
+      <div class="process-content-wrapper">
+        <!-- Left Column: Steps Stacked -->
+        <div class="process-steps">
+          <div class="step">
+            <div class="card-body">
+              <div class="step-number">01</div>
+              <h3>Diagnostic</h3>
+              <p>Analyse précise de votre besoin sur place.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="card-body">
+              <div class="step-number">02</div>
+              <h3>Devis</h3>
+              <p>Proposition transparente et détaillée.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="card-body">
+              <div class="step-number">03</div>
+              <h3>Intervention</h3>
+              <p>Travaux par des experts qualifiés.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="card-body">
+              <div class="step-number">04</div>
+              <h3>Suivi</h3>
+              <p>Garantie et SAV réactif.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual -->
+        <div class="process-visual-column">
+          <img src="/methodology.webp" alt="Notre Méthodologie" class="process-image">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Section: 2 Columns Redesign -->
+  <section class="testimonials section-padding" id="testimonials">
+    <div class="container testimonials-wrapper">
+
+      <!-- Left Column: Social Proof -->
+      <div class="testimonials-left">
+        <h2 class="section-title">Nos clients <span class="text-accent">ont dit</span></h2>
+
+        <div class="social-proof-content">
+          <div class="google-badge-row">
+            <img src="/Google-Review-Logo.webp" alt="Google Reviews" class="google-logo">
+            <div class="google-rating">
+              <span class="score">5.0</span>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/search?q=ThermoEnergy+Plomberie+Paris+Avis&sca_esv=94726681584146d1&rlz=1C5CHFA_enFR1156FR1156&hl=it-FR&biw=1271&bih=713&ei=QdaIabugJ9GjkdUPq8q2yQI&ved=0ahUKEwj7xKy6w8qSAxXRUaQEHSulLSkQ4dUDCBM&uact=5&oq=ThermoEnergy+Plomberie+Paris+Avis&gs_lp=Egxnd3Mtd2l6LXNlcnAiIVRoZXJtb0VuZXJneSBQbG9tYmVyaWUgUGFyaXMgQXZpczIHECEYoAEYCjIHECEYoAEYCkjKD1CICVi6DHAEeACQAQCYAXigAegCqgEDMy4xuAEDyAEA-AEBmAIIoAL4AsICCxAAGIAEGLADGKIEwgIIEAAYsAMY7wXCAgUQIRigAcICBBAhGBWYAwCIBgGQBgWSBwM3LjGgB8ISsgcDMy4xuAfzAsIHAzUuM8gHCIAIAA&sclient=gws-wiz-serp"
+            class="btn-review-google" target="_blank" rel="noopener noreferrer">
+            Laisse un avis
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Dynamic Slider -->
+      <div class="testimonials-right">
+        <div class="quote-mark-large">❝</div>
+
+        <div class="review-slider-content">
+          <h3 class="review-author" id="review-author">Nom Prénom</h3>
+          <p class="review-text" id="review-text">Chargement des avis...</p>
+        </div>
+
+        <!-- Minimal Slider Controls -->
+        <div class="slider-controls">
+          <button class="slider-arrow next-review" id="next-review">→</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact" class="contact section-padding">
+    <div class="container contact-wrapper">
+      <div class="contact-info">
+        <h2 class="section-title" style="line-height:1.2;">Ne laissez pas un <span class="text-accent">problème
+            technique</span> freiner votre
+          quotidien.</h2>
+
+        <ul class="contact-details">
+          <li>
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+            </div>
+            <a href="tel:0783164605" style="color: inherit; text-decoration: none;">07 83 16 46 05</a>
+          </li>
+          <li>
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <a href="https://maps.google.com/?q=90+Rue+Jeanne+d'Arc,+75013+Paris" target="_blank"
+              style="color: inherit; text-decoration: none;">90 Rue Jeanne d'Arc, 75013 Paris</a>
+          </li>
+        </ul>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" placeholder="Nom complet" required class="input-modern">
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Téléphone" required class="input-modern">
+        </div>
+        <div class="form-group">
+          <select class="input-modern select-modern" required>
+            <option value="" disabled selected>Type d'intervention</option>
+            <option value="urgence">Urgence</option>
+            <option value="plomberie">Plomberie</option>
+            <option value="chauffage">Chauffage</option>
+            <option value="reno">Rénovation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Message" rows="4" class="input-modern textarea-modern"></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-block">Envoyer la demande</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 Thermo Energy Paris. Tous droits réservés.</p>
+      <div class="footer-links">
+        <a href="#">Mentions Légales</a>
+        <a href="#">Politique de Confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
