@@ -45,7 +45,7 @@ const pipeBase = document.createElementNS(svgNS, "path");
 pipeBase.setAttribute("stroke", "#B8860B"); // Dark Goldenrod outline
 pipeBase.setAttribute("stroke-width", "26");
 pipeBase.setAttribute("fill", "none");
-pipeBase.setAttribute("stroke-linecap", "round");
+pipeBase.setAttribute("stroke-linecap", "butt");
 pipeBase.setAttribute("stroke-linejoin", "round");
 pipeBase.style.filter = "url(#pipeShadow)";
 pipeContainer.appendChild(pipeBase);
@@ -55,7 +55,7 @@ const pipeMain = document.createElementNS(svgNS, "path");
 pipeMain.setAttribute("stroke", "#f8c61e"); // Standard Gold
 pipeMain.setAttribute("stroke-width", "20");
 pipeMain.setAttribute("fill", "none");
-pipeMain.setAttribute("stroke-linecap", "round");
+pipeMain.setAttribute("stroke-linecap", "butt");
 pipeMain.setAttribute("stroke-linejoin", "round");
 pipeContainer.appendChild(pipeMain);
 
@@ -64,7 +64,7 @@ const pipeHighlight = document.createElementNS(svgNS, "path");
 pipeHighlight.setAttribute("stroke", "rgba(255, 255, 255, 0.4)");
 pipeHighlight.setAttribute("stroke-width", "6");
 pipeHighlight.setAttribute("fill", "none");
-pipeHighlight.setAttribute("stroke-linecap", "round");
+pipeHighlight.setAttribute("stroke-linecap", "butt");
 pipeHighlight.setAttribute("stroke-linejoin", "round");
 // Shift highlight slightly up/left? Hard to do with just path data on complex turns. 
 // For now, centered highlight simulates overhead lighting nicely on a tube.
@@ -80,7 +80,7 @@ const pipeBase2 = document.createElementNS(svgNS, "path");
 pipeBase2.setAttribute("stroke", "#B8860B");
 pipeBase2.setAttribute("stroke-width", "26");
 pipeBase2.setAttribute("fill", "none");
-pipeBase2.setAttribute("stroke-linecap", "round");
+pipeBase2.setAttribute("stroke-linecap", "butt");
 pipeBase2.setAttribute("stroke-linejoin", "round");
 pipeBase2.style.filter = "url(#pipeShadow)";
 pipeSecondGroup.appendChild(pipeBase2);
@@ -89,7 +89,7 @@ const pipeMain2 = document.createElementNS(svgNS, "path");
 pipeMain2.setAttribute("stroke", "#f8c61e");
 pipeMain2.setAttribute("stroke-width", "20");
 pipeMain2.setAttribute("fill", "none");
-pipeMain2.setAttribute("stroke-linecap", "round");
+pipeMain2.setAttribute("stroke-linecap", "butt");
 pipeMain2.setAttribute("stroke-linejoin", "round");
 pipeSecondGroup.appendChild(pipeMain2);
 
@@ -97,7 +97,7 @@ const pipeHighlight2 = document.createElementNS(svgNS, "path");
 pipeHighlight2.setAttribute("stroke", "rgba(255, 255, 255, 0.4)");
 pipeHighlight2.setAttribute("stroke-width", "6");
 pipeHighlight2.setAttribute("fill", "none");
-pipeHighlight2.setAttribute("stroke-linecap", "round");
+pipeHighlight2.setAttribute("stroke-linecap", "butt");
 pipeHighlight2.setAttribute("stroke-linejoin", "round");
 pipeSecondGroup.appendChild(pipeHighlight2);
 
@@ -574,7 +574,20 @@ function updateScroll() {
   });
 }
 
-window.addEventListener('scroll', updateScroll);
+// Optimization: Use requestAnimationFrame for smoother scroll
+let isScrolling = false;
+
+function onScroll() {
+  if (!isScrolling) {
+    window.requestAnimationFrame(() => {
+      updateScroll();
+      isScrolling = false;
+    });
+    isScrolling = true;
+  }
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
 
 // --- Review Slider Logic ---
 const reviews = [
@@ -696,4 +709,61 @@ function initCustomCursor() {
 }
 
 // Initialize on load
+
 window.addEventListener('load', initCustomCursor);
+
+// --- Dropdown Toggle Logic ---
+document.addEventListener('click', (e) => {
+  const toggle = e.target.closest('.dropdown-toggle');
+  const dropdown = e.target.closest('.nav-item-dropdown');
+
+  if (toggle) {
+    e.preventDefault();
+    e.stopPropagation();
+    const parent = toggle.closest('.nav-item-dropdown');
+    parent.classList.toggle('active');
+    return;
+  }
+
+  // Close dropdown when clicking outside
+  document.querySelectorAll('.nav-item-dropdown.active').forEach(el => {
+    if (!dropdown || el !== dropdown) {
+      el.classList.remove('active');
+    }
+  });
+});
+
+// --- Simple Image Gallery Slider ---
+function initGallerySliders() {
+  const sliders = document.querySelectorAll('.gallery-slider');
+
+  sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.gallery-slide');
+    if (slides.length <= 1) return; // No arrows needed for single image
+    let currentIndex = 0;
+
+    const sliderId = slider.id;
+    const prevBtn = document.querySelector(`.gallery-prev[data-slider="${sliderId}"]`);
+    const nextBtn = document.querySelector(`.gallery-next[data-slider="${sliderId}"]`);
+
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      slides[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showSlide((currentIndex - 1 + slides.length) % slides.length);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showSlide((currentIndex + 1) % slides.length);
+      });
+    }
+  });
+}
+
+window.addEventListener('load', initGallerySliders);

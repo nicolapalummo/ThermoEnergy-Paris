@@ -32,7 +32,13 @@
       <!-- Links Block -->
       <nav class="nav-links-wrapper">
         <ul class="nav-links">
-          <li><a href="#services">SERVICES</a></li>
+          <li class="nav-item-dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">SERVICES</a>
+            <div class="dropdown-menu">
+              <a href="plomberie.html" class="dropdown-item">Plomberie</a>
+              <a href="chauffage.html" class="dropdown-item">Chauffage</a>
+            </div>
+          </li>
           <li><a href="#process">NOTRE PROCESS</a></li>
           <li><a href="#testimonials">AVIS</a></li>
           <li><a href="#contact">CONTACTS</a></li>
@@ -41,7 +47,7 @@
 
       <!-- CTA Block -->
       <div class="nav-cta-wrapper">
-        <a href="tel:0783164605" class="btn-urgent">07 83 16 46 05</a>
+        <a href="#contact" class="btn-urgent">Devis Gratuit</a>
       </div>
     </div>
   </header>
@@ -50,8 +56,30 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-container">
+      <!-- Added Hero Badges -->
+      <div class="hero-badge badge-urgence">
+        <div class="alert-icon-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </div>
+        <span>Urgence 24/7</span>
+      </div>
+
+      <a href="#testimonials" class="hero-badge badge-rating">
+        <img src="/Google_ 22G 22_logo.webp" alt="Google" class="google-logo-badge">
+        <div class="rating-text">
+          <span class="score">5.0</span>
+          <span class="stars">★★★★★</span>
+          <span class="source">sur Google</span>
+        </div>
+      </a>
+
       <div class="hero-content">
-        <p class="hero-subtitle">Votre confort. Notre priorité.</p>
+        <p class="hero-subtitle">Chauffage & plomberie à Paris.</p>
       </div>
       <h1 class="hero-title-brand">
         <span class="brand-line-1">THERMOENERGY</span>
@@ -104,6 +132,7 @@
         </div>
         <h3>Plomberie Générale</h3>
         <p>Installation, réparation et entretien de vos réseaux d'eau. Savoir-faire artisanal garanti.</p>
+        <a href="plomberie.html" class="btn-card-link">En savoir plus</a>
         <div class="pipe-joint joint-in"></div>
         <div class="pipe-joint joint-out"></div>
       </div>
@@ -142,6 +171,7 @@
         </div>
         <h3>Chauffage & Eau Chaude</h3>
         <p>Dépannage chaudière, installation de radiateurs et optimisation énergétique.</p>
+        <a href="chauffage.html" class="btn-card-link">En savoir plus</a>
         <div class="pipe-joint joint-in"></div>
         <div class="pipe-joint joint-out"></div>
       </div>

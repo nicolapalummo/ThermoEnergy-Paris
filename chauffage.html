@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chauffage - Thermo Energy Paris</title>
+    <meta name="description"
+        content="Thermo Energy Paris : Expertise en chauffage, chaudières et économies d'énergie à Paris.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="secondary-page">
+    <div class="cursor-dot"></div>
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo">75</a>
+            </div>
+            <nav class="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li class="nav-item-dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">SERVICES</a>
+                        <div class="dropdown-menu">
+                            <a href="plomberie.html" class="dropdown-item">Plomberie</a>
+                            <a href="chauffage.html" class="dropdown-item">Chauffage</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#process">NOTRE PROCESS</a></li>
+                    <li><a href="index.html#testimonials">AVIS</a></li>
+                    <li><a href="index.html#contact">CONTACTS</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta-wrapper">
+                <a href="index.html#contact" class="btn-urgent">Devis Gratuit</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container" style="justify-content: center; align-items: center; text-align: center;">
+            <h1 class="hero-title-brand" style="margin-top: 0;">
+                <span class="brand-line-1">CHAUFFAGE</span>
+                <span class="brand-line-2 text-outline">& ÉNERGIE</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Service Content: 2 Columns -->
+    <section class="section-padding">
+        <div class="container service-content">
+
+            <!-- Left Column: Description -->
+            <div class="service-text">
+                <p>
+                    Un système de chauffage performant est essentiel pour votre confort au quotidien.
+                    Nos experts chauffagistes interviennent pour le dépannage de votre chaudière, l'installation
+                    de nouveaux radiateurs ou le remplacement complet de votre système de chauffage.
+                </p>
+                <p>
+                    Nous vous conseillons pour optimiser votre consommation énergétique et réduire vos factures.
+                    Chaque installation est dimensionnée selon les besoins spécifiques de votre logement
+                    pour garantir un rendement optimal.
+                </p>
+                <p>
+                    De l'entretien annuel obligatoire de votre chaudière à l'installation de solutions
+                    de chauffage modernes et économiques, notre équipe vous accompagne à chaque étape
+                    avec professionnalisme et transparence.
+                </p>
+            </div>
+
+            <!-- Right Column: Gallery -->
+            <div class="service-gallery">
+                <h3 class="service-gallery-title">Nos <span class="text-accent">Réalisations</span></h3>
+
+                <div class="gallery-slider" id="chauffage-slider">
+                    <img src="/chauffage1_ThermoEnergyParis.webp" alt="Réalisation chauffage 1"
+                        class="gallery-slide active">
+                </div>
+
+                <!-- Arrow Navigation -->
+                <div class="gallery-nav">
+                    <button class="gallery-arrow gallery-prev" data-slider="chauffage-slider">←</button>
+                    <button class="gallery-arrow gallery-next" data-slider="chauffage-slider">→</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Thermo Energy Paris. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#">Mentions Légales</a>
+                <a href="#">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

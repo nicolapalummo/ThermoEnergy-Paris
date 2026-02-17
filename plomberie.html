@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plomberie - Thermo Energy Paris</title>
+    <meta name="description"
+        content="Thermo Energy Paris : Services de plomberie générale, installation, réparation et entretien à Paris.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="secondary-page">
+    <div class="cursor-dot"></div>
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo">75</a>
+            </div>
+            <nav class="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li class="nav-item-dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">SERVICES</a>
+                        <div class="dropdown-menu">
+                            <a href="plomberie.html" class="dropdown-item">Plomberie</a>
+                            <a href="chauffage.html" class="dropdown-item">Chauffage</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#process">NOTRE PROCESS</a></li>
+                    <li><a href="index.html#testimonials">AVIS</a></li>
+                    <li><a href="index.html#contact">CONTACTS</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta-wrapper">
+                <a href="index.html#contact" class="btn-urgent">Devis Gratuit</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container" style="justify-content: center; align-items: center; text-align: center;">
+            <h1 class="hero-title-brand" style="margin-top: 0;">
+                <span class="brand-line-1">PLOMBERIE</span>
+                <span class="brand-line-2 text-outline">GÉNÉRALE</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Service Content: 2 Columns -->
+    <section class="section-padding">
+        <div class="container service-content">
+
+            <!-- Left Column: Description -->
+            <div class="service-text">
+                <p>
+                    Chez Thermo Energy Paris, nous traitons tous vos problèmes de plomberie avec rapidité et expertise.
+                    Que ce soit pour une fuite d'eau, un débouchage de canalisation, ou l'installation complète de votre
+                    salle de bain, nos artisans qualifiés garantissent un travail soigné et durable.
+                </p>
+                <p>
+                    Nous utilisons des matériaux de haute qualité pour assurer la longévité de vos installations.
+                    Chaque intervention est réalisée dans le respect des normes en vigueur, avec un souci constant
+                    de propreté et de finition impeccable.
+                </p>
+                <p>
+                    Notre équipe intervient sur toute la région parisienne pour des travaux de plomberie générale :
+                    remplacement de robinetterie, réparation de chasse d'eau, installation de sanitaires,
+                    mise en conformité des réseaux d'eau, et bien plus encore.
+                </p>
+            </div>
+
+            <!-- Right Column: Gallery -->
+            <div class="service-gallery">
+                <h3 class="service-gallery-title">Nos <span class="text-accent">Réalisations</span></h3>
+
+                <div class="gallery-slider" id="plomberie-slider">
+                    <img src="/plomberie1_ThermoEnergyParis.webp" alt="Réalisation plomberie 1"
+                        class="gallery-slide active">
+                    <img src="/plomberie2_ThermoEnergyParis.webp" alt="Réalisation plomberie 2" class="gallery-slide">
+                    <img src="/plomberie3_ThermoEnergyParis.webp" alt="Réalisation plomberie 3" class="gallery-slide">
+                    <img src="/plomberie4_ThermoEnergyParis.webp" alt="Réalisation plomberie 4" class="gallery-slide">
+                    <img src="/plomberie5_ThermoEnergyParis.webp" alt="Réalisation plomberie 5" class="gallery-slide">
+                </div>
+
+                <!-- Arrow Navigation -->
+                <div class="gallery-nav">
+                    <button class="gallery-arrow gallery-prev" data-slider="plomberie-slider">←</button>
+                    <button class="gallery-arrow gallery-next" data-slider="plomberie-slider">→</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Thermo Energy Paris. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#">Mentions Légales</a>
+                <a href="#">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
